@@ -1,0 +1,128 @@
+/* Estilo global */
+body {
+    background-color: #f4f4f4; /* Fondo gris claro */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-image: url(bordes.img);
+    
+}
+
+h4{
+    color: chartreuse;
+}
+
+/* Efectos de transformación 2D y 3D en las tarjetas */
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    perspective: 1000px; /* Añade perspectiva para la transformación 3D */
+}
+
+.card:hover {
+    transform: scale(1.05) rotateY(15deg); /* Transformación 2D y 3D al hacer hover */
+}
+
+/* Transición suave para los botones */
+button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición al hacer hover */
+}
+
+button:hover {
+    background-color: #555;
+    transform: translateY(-5px); /* Efecto de transición con movimiento */
+}
+
+/* Animación en la imagen de perfil */
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    animation: girar 5s infinite linear; /* Añade animación a la imagen */
+}
+
+@keyframes girar {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Paginación en columnas */
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Flexbox para las tarjetas */
+    column-count: 3; /* Tres columnas para las tarjetas */
+}
+
+/* Box-sizing para todos los elementos */
+* {
+    box-sizing: border-box; /* Asegura que el padding y el border se incluyan en el tamaño total */
+}
+
+/* Flexbox aplicado al menú */
+nav {
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #ff6600;
+}
+
+/* Interfaz de usuario mejorada con estilos de hover */
+.menu li:hover .submenu {
+    display: block;
+}
+
+.submenu {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #555;
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.submenu li a {
+    padding: 10px 20px;
+    display: block;
+    color: white;
+}
+
+.submenu li a:hover {
+    background-color: #666;
+}
